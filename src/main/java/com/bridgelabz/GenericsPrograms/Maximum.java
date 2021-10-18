@@ -1,21 +1,13 @@
 package com.bridgelabz.GenericsPrograms;
 
-public class Maximum<E extends Comparable> {
-	 public static <E extends Comparable> E testMaximum(E... values) {
-	        E max = values[0];
-	        for( E element : values){
-	            if(element.compareTo(max)>0){
-	                max = element;
-	            }
-	        }
-	        toPrint(max,values);
+public class Maximum {
+	 public static <E extends Comparable> E getmaximum(E value1, E value2, E value3) {
+	        E max = value1;
+	        if (value2.compareTo(value1) > 0 && value2.compareTo(value3) > 0)
+	            max = value2;
+	        else if (value3.compareTo(value2) > 0 && value3.compareTo(value1) > 0)
+	            max = value3;
+	       
 	        return max;
-	    }
-
-	    private static <E> void toPrint(E max, E... values) {
-	        for(E element : values){
-	            System.out.print("\t"+element);
-	        }
-	        System.out.print(" max is "+max);
 	    }
 }
